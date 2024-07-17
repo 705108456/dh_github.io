@@ -34,7 +34,7 @@
 			    iPad: u.indexOf('iPad') > -1, //是否iPad
 			    webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
 			  　QQbrw: u.indexOf('MQQBrowser') > -1, // QQ浏览器
-　　　　　　　  　qq: u.match(/QQ/i) == "qq", // QQ
+　　　　　　　             　qq: u.match(/QQ/i) == "qq", // QQ
 
 			   };
 			  }(),
@@ -43,8 +43,7 @@
 			 
 			 
 			 if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面 
-			   var ua = navigator.userAgent.toLowerCase();//获取判断用的对象 
-			   alert(ua.indexOf('MQQBrowser') +"    "+ua.match(/QQ/i))
+			   var ua = navigator.userAgent.toLowerCase();//获取判断用的对象  
 			   
 			   
 			   if (ua.match(/MicroMessenger/i) == "micromessenger"  && browser.versions.android ) {
@@ -60,16 +59,16 @@
 				}
 			   
 			   if(browser.versions.qq){
-                               alert("QQ打开");
+                               
+				  if(browser.versions.qq){
+				   alert("QQ打开" +(ua.split("qq").length -1)); 
+			          }
+				   
 			   }
 			   
-			   if(browser.versions.QQbrw){
-			     alert("QQ浏览器");
-			   }
-			   
-			   // if (ua.match(/QQ/i) == "qq") {
-			   //   alert("在QQ空间打开");
-			   // }
+			   // if(browser.versions.QQbrw){
+			   //   alert("QQ浏览器");
+			   // } 
 			   if (browser.versions.ios) {
 			     alert("暂不支持 IOS 系统使用");
 				 b.hidden = true;  
