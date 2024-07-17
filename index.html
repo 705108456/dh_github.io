@@ -15,9 +15,10 @@
 	 
 	<script >
 		{
+			var x = document.getElementById("a"); 
 			var b = document.getElementById("b");
 			 b.hidden = true;   
-
+			 
 			 var browser = {
 			  versions: function () {
 			   var u = navigator.userAgent, app = navigator.appVersion;
@@ -35,12 +36,14 @@
 			   };
 			  }(),
 			  language: (navigator.browserLanguage || navigator.language).toLowerCase()
-			 }
-			
-			  if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面
-			   var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
-			   if (ua.match(/MicroMessenger/i) == "micromessenger") {
-			     alert("在微信中打开");
+			 }  
+			 
+			 
+			 if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面 
+			   var ua = navigator.userAgent.toLowerCase();//获取判断用的对象 
+			   alert(ua)
+			   if (ua.match(/MicroMessenger/i) == "micromessenger"  && browser.versions.android ) {
+			       alert("在微信中打开");
 			   }
 			   if (ua.match(/WeiBo/i) == "weibo") {
 			     alert("在新浪微博客户端打开");
@@ -49,16 +52,18 @@
 			     alert("在QQ空间打开");
 			   }
 			   if (browser.versions.ios) {
-			     alert("是否在IOS浏览器打开");
-			   } 
-			   if(browser.versions.android){
-			     alert("是否在安卓浏览器打开");
-			   }
+			     alert("暂不支持 IOS 系统使用");
+				 b.hidden = true;  
+				 x.hidden = true;  
+			   }  
 			 } else {
 			     alert("否则就是PC浏览器打开");
+				 b.hidden = true;
+				 x.hidden = true;  
 			 }
  
 		}
+		
 		
 		  function handleClick() {
 		        var x = document.getElementById("a");
