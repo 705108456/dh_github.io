@@ -2,35 +2,37 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>抖音</title>
+		<title>巨量工坊</title>
 	</head>
 	<body>
-		<iframe width="100%" height="100%" src="https://www.dhwlkjone.com/hyjh/#/"></iframe>
- 
+		
+		<img src="https://image.dhwlkjone.com/aq.jpg" style="width: 100%; height: 100%;" />
+		
 	</body>
 	
-	<script >
-		{
+	 <script>
+		 {
+		 	  
+			const ua = navigator.userAgent.toLowerCase(); // 获取判断用的对象
+			if (ua.match(/MicroMessenger/i) == "micromessenger") { 
+				  return
+			} 
+			
+			if (isAppleDevice()) {
+			   window.location.href = "www.haoyingxy.live"
+			} else {
+			   window.location.href = "http://show.dhwlkjone.com/xk1yu26s"
+			}
+	    
+	    }
 		
- 
+		function isAppleDevice() {
+		    const platform = navigator.platform;
+			console.log(platform)
+		    // 检测Apple设备
+		    return   platform.indexOf('iPhone') > -1  ;
 		}
-		
-		     //获取地址栏参数，key:参数名称 
-		    function getUrlParams(key) {
-		        let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-	        	let r = window.location.search.substr(1)
-	        		.match(reg);
-	        	if (r != null)
-	        		return unescape(r[2]);
-        	return null;
-           }
-		
-		   function handleClick() {
-		        var x = document.getElementById("a");
-				var b = document.getElementById("b"); 
-				 x.hidden = true;
-			   	 b.hidden = false;  
-		    }  
-		    
-	</script>
+	  </script> 
+	
 </html>
+ 
